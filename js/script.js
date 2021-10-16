@@ -207,5 +207,11 @@ function generateAuthors(){
         authorsWrapper.insertAdjacentHTML('afterbegin', linkHTML);
 
         html = html + linkHTML;
+
+        /* push generated to html var */
+        authorsWrapper.innerHTML = html;
+        console.log(html);
     }
 }
+
+generateTags();

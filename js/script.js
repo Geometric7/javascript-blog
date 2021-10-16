@@ -186,3 +186,26 @@ function addClickListenersToTags() {
 }
 
 addClickListenersToTags();
+
+generateAuthors();
+function generateAuthors(){
+    /*find all articles */
+    const articles = document.querySelectorAll(optArticleSelector);
+
+    /* loop */
+    for(let article of articles){
+        console.log(article);
+        /*f tags wrapper*/
+        const authorsWrapper = article.querySelector(optArticleTagsSelector);
+        /*html-empty-string*/
+        let html = '';
+
+        const articleTags = article.getAttribute('data-author');
+        console.log(articleTags);
+        /*insert html of all the links into tags wrapper*/
+        const linkHTML = '';
+        authorsWrapper.insertAdjacentHTML('afterbegin', linkHTML);
+
+        html = html + linkHTML;
+    }
+}

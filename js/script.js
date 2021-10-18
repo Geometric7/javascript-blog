@@ -316,27 +316,24 @@ function authorClickHandler(event) {
     console.log('author:', author);
 
     const activeAuthorLinks = document.querySelectorAll('a[href^="#author-"]');
-    console.log('activeAuthorLinks:', activeAuthorLinks);
 
-    if (activeAuthorLinks) {
-        for (let activeAuthor of activeAuthorLinks) {
-            activeAuthor.classList.remove('active');
-        }
+    for (let activeAuthorLink of activeAuthorLinks) {
+        activeAuthorLink.classList.remove('active');
+    }
+    const tagLinks = document.querySelectorAll('a[href="' + href + '"]');
+    for (let tag of tagLinks) {
+        tag.classList.add('active');
     }
 
-    const authorLinks = document.querySelectorAll('a[href="' + href + '"]');
-
-    for (let author of authorLinks) {
-        author.class.add('active');
-    }
     generateTitleLinks('[data-author="' + author + '"]');
 }
 
-function addClickListenersToAuthors() {
+const addClickListenersToAuthors = function() {
     const authorLinks = document.querySelectorAll('a[href^="#author-"]');
-    for (let author of authorLinks) {
+    for (let authorLink of authorLinks) {
         author.addEventListener('click', authorClickHandler);
     }
-}
 
-addClickListenersToAuthors();
+
+    addClickListenersToAuthors();
+}

@@ -82,31 +82,42 @@ generateTitleLinks();
 
 /* calcTagsParams */
 function calculateTagsParams(tags) {
-    const params ={
+    const params = {
         min: 1,
-        max 5,
+        max: 5,
     }
     console.log(params);
     for (let tag in tags) {
         console.log(tag + ' is used ' + tags[tag] + 'times');
 
-    params.max = Math.max(tags[tag], params.max);
-    params.min = Math.min(tags[tag], params.min);
+        params.max = Math.max(tags[tag], params.max);
+        params.min = Math.min(tags[tag], params.min);
 
-    if (tags[tag] > params.max) {
-        params.max = tags[tag];
+        if (tags[tag] > params.max) {
+            params.max = tags[tag];
+        }
+        if (tags[tag] < params.min) {
+            params.min = tags[tag];
+        }
     }
-    if (tags[tag] < params.min) {
-        params.min = tags[tag];
-    }
+    return params;
 }
-return params;
+/*calculateTagClass*/
+function calculateTagClass(count, params) {
+    const normalizedCount = count - params.min;
+    const normalizedMax = params.max - params.min;
+    const percentage = normalizedCound / normalizedMax;
+    const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
+    return optCloudClassPrefix + classNumber;
 }
 
 function generateTags() {
 
+/* [new] create a new variable allTags with empty object */
+let allTags = {};
+
     /* find all articles */
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(.post);
 
     /* START LOOP: for every article: */
     for (let article of articles) {
@@ -131,11 +142,17 @@ function generateTags() {
             console.log(tag);
 
             /* generate HTML of the link */
-            const taglinkHTML = '<li><a href="#tags-' + tag + '">' + tag + '</a></li>';
+            const taglinkHTML = '<li><a href="#tag-' + '">' + tag + '</a></li>';
             console.log(taglinkHTML);
-            tagsWrapper.insertAdjacentHTML('afterbegin', taglinkHTML);
 
-            html = html + taglinkHTML;
+
+            html += linkHTML + ' ';
+
+            if (!allTags[tag]) {
+                allTags[tag] = 1;
+            } else {
+                allTags[tag]++;
+            }
 
             /* END LOOP: for each tag */
         }
@@ -145,7 +162,7 @@ function generateTags() {
         /* END LOOP: for every article: */
 
     }
-}
+
 
 generateTags();
 

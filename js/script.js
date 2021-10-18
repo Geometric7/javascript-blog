@@ -331,12 +331,15 @@ function authorClickHandler(event) {
     generateTitleLinks('[data-author="' + author + '"]');
 }
 
-const addClickListenersToAuthors = function() {
+function addClickListenersToAuthors() {
+    console.log(addClickListenersToAuthors);
+
     const authorLinks = document.querySelectorAll('a[href^="#author-"]');
     for (let authorLink of authorLinks) {
-        author.addEventListener('click', authorClickHandler);
+        authorLink.addEventListener('click', authorClickHandler);
     }
 
 
     addClickListenersToAuthors();
-};
+
+}

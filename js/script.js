@@ -91,6 +91,7 @@ function calculateTagsParams(tags) {
         max: 5,
     };
     console.log(params);
+
     for (let tag in tags) {
         console.log(tag + ' is used ' + tags[tag] + 'times');
 
@@ -221,7 +222,7 @@ function tagClickHandler(event) {
 function addClickListenersToTags() {
     console.log(addClickListenersToTags);
     /* find all links to tags */
-    const tagLinks = document.querySelectorAll('a[href^="tag-"]');
+    const tagLinks = document.querySelectorAll('a[href^="#tag-"]');
     /* START LOOP: for each link */
     for (let tagLink of tagLinks) {
         /* add tagClickHandler as event listener for that link */
@@ -307,7 +308,7 @@ function generateAuthors() {
 
 generateAuthors();
 
-function authorClickHandler(event) {
+const authorClickHandler = function (event) {
 
     event.preventDefault();
     const clickedElement = this;
@@ -329,9 +330,9 @@ function authorClickHandler(event) {
     }
 
     generateTitleLinks('[data-author="' + author + '"]');
-}
+};
 
-function addClickListenersToAuthors() {
+const addClickListenersToAuthors = function () {
     console.log(addClickListenersToAuthors);
 
     const authorLinks = document.querySelectorAll('a[href^="#author-"]');
@@ -342,4 +343,4 @@ function addClickListenersToAuthors() {
 
     addClickListenersToAuthors();
 
-}
+};

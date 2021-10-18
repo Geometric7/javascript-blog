@@ -68,93 +68,28 @@
 /* Authors */
  .authors li {
 	 margin-bottom: 12px;
-	 @import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext');
-	/* Variables */
-	/* Global */
-	/* Layout */
-	/* Logo */
-	/* Lists */
-	/* Authors */
-	/* Post */
-}
- .authors li *, .authors li *::before, .authors li *::after {
-	 box-sizing: border-box;
-}
- .authors li body {
-	 background: #fff;
-	 font-family: 'Source Sans Pro', sans-serif;
-	 color: #444;
-	 font-weight: 300;
-	 font-size: 16px;
-	 line-height: 1.7;
-}
- .authors li .container {
-	 max-width: 1140px;
-	 margin: 0 auto;
-}
- .authors li .section-title {
-	 font-size: 22px;
-	 text-transform: uppercase;
-	 font-family: 'Oswald', sans-serif;
-	 font-weight: 600;
-}
- .authors li .section-title span {
-	 text-transform: none;
-	 font-weight: 400;
-	 color: #777;
-}
- .authors li .wrapper {
-	 display: flex;
-	 margin-left: 10px;
-}
- .authors li .sidebar {
-	 flex: 1 0 0;
-}
- .authors li .posts {
-	 flex: 2 0 0;
-}
- .authors li .sidebar, .authors li .posts {
-	 background: #fff;
-	 margin-right: 10px;
-	 padding: 40px;
-	 border: 1px solid #444;
-	 border-radius: 5px;
-}
- .authors li .logo {
-	 font-family: 'Sacramento', cursive;
-	 font-weight: 400;
-	 font-size: 104px;
-	 line-height: 1;
-	 text-align: center;
-}
- .authors li .list {
-	 list-style-type: none;
-	 margin: 0;
-	 padding: 0;
-}
- .authors li .list .active {
-	 font-weight: bold;
-}
- .authors li .list-horizontal li {
 	 display: inline-block;
+	 margin: 0 5px;
 }
- .authors li .authors li {
-	 margin-bottom: 12px;
+ .author-size-1 {
+	 font-size: 10px;
+	 color: #15794c;
 }
- .authors li .post {
-	 display: none;
+ .author-size-2 {
+	 font-size: 20px;
+	 color: purple;
 }
- .authors li .post.active {
-	 display: block;
+ .author-size-3 {
+	 font-size: 30px;
+	 color: #2c31e4;
 }
- .authors li .post-author {
-	 font-style: italic;
+ .author-size-4 {
+	 font-size: 40px;
+	 color: orangered;
 }
- .authors li .post-tags {
-	 display: flex;
-}
- .authors li .post-tags p {
-	 margin: 0 10px 0 0;
+ .author-size-5 {
+	 font-size: 50px;
+	 color: #c85a6e;
 }
 /* Post */
  .post {
@@ -172,4 +107,34 @@
  .post-tags p {
 	 margin: 0 10px 0 0;
 }
- 
+/* Cloud Tag */
+ .tags li {
+	 display: inline-block;
+	 margin: 0 5px;
+}
+ .tag-size-1 {
+	 font-size: 10px;
+	 color: red;
+}
+ .tag-size-2 {
+	 font-size: 20px;
+	 color: #23bce2;
+}
+ .tag-size-3 {
+	 font-size: 30px;
+	 color: orange;
+}
+ .tag-size-4 {
+	 font-size: 40px;
+	 color: purple;
+}
+ .tag-size-5 {
+	 font-size: 50px;
+	 color: #7c31e4;
+}
+ .list {
+	 list-style-type: none;
+}
+ .list a {
+	 text-decoration: none;
+}

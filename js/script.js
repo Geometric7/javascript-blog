@@ -114,23 +114,19 @@ function generateTags() {
             console.log(tag);
 
             /* generate HTML of the link */
-            const linkHTML = '"<li><a href="#tags-' + tag + '">' + tag + '</a></li>"';
-            console.log(linkHTML);
-            articleTags.insertAdjacentHTML('afterbegin', linkHTML);
+            const taglinkHTML = '"<li><a href="#tags-' + tag + '">' + tag + '</a></li>"';
+            console.log(taglinkHTML);
+            tagsWrapper.insertAdjacentHTML('afterbegin', taglinkHTML);
 
-            html = html + linkHTML;
-            console.log(html);
+            html = html + taglinkHTML;
 
-            articleTags.innerHTML = html;
-
-            /* add generated code to html variable */
-            tagsWrapper.innerHTML = html;
-            console.log(html);
             /* END LOOP: for each tag */
         }
         /* insert HTML of all the links into the tags wrapper */
-
+        tagsWrapper.innerHTML = html;
+        console.log(html);
         /* END LOOP: for every article: */
+
     }
 }
 
@@ -145,7 +141,6 @@ function tagClickHandler(event) {
 
     /* make a new constant "href" and read the attribute "href" of the clicked element */
     const href = clickedElement.getAttribute('href');
-    console.log(tag);
 
     /* make a new constant "tag" and extract tag from the "href" constant */
     const tag = href.replace('#tag-', '');
@@ -188,22 +183,23 @@ function addClickListenersToTags() {
 addClickListenersToTags();
 
 generateAuthors();
-function generateAuthors(){
+
+function generateAuthors() {
     /*find all articles */
     const articles = document.querySelectorAll(optArticleSelector);
 
     /* loop */
-    for(let article of articles){
+    for (let article of articles) {
         console.log(article);
         /*f tags wrapper*/
         const authorsWrapper = article.querySelector(optArticleTagsSelector);
         /*html-empty-string*/
         let html = '';
 
-        const articleTags = article.getAttribute('data-author');
-        console.log(articleTags);
+        const articleAuthor = article.getAttribute('data-author');
+        console.log(articleAuthor);
         /*insert html of all the links into tags wrapper*/
-        const linkHTML = '';
+        const linkHTML = '<li><a href ="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
         authorsWrapper.insertAdjacentHTML('afterbegin', linkHTML);
 
         html = html + linkHTML;
@@ -214,4 +210,4 @@ function generateAuthors(){
     }
 }
 
-generateTags();
+generateAuthors();

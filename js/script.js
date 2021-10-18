@@ -162,7 +162,18 @@ let allTags = {};
         /* END LOOP: for every article: */
 
     }
+const tagList = document.querySelector('.tags');
+const tagParams = calculateTagParams(allTags);
+let allTagsHTML = '';
 
+for (let tag in allTags){
+    const tagLinkHTML = '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + ' " href="#tag-' + tag + '</a></li>'>;
+allTagsHTML += tagLinkHTML;
+}
+
+tagList.innerHTML = allTagsHTML;
+console.log(allTags);
+}
 
 generateTags();
 
@@ -184,6 +195,8 @@ function tagClickHandler(event) {
     const activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
 
     /* START LOOP: for each active tag link */
+
+    let html = '';
     for (let activeTag of activeTags) {
 
         /* remove class active */
@@ -191,7 +204,7 @@ function tagClickHandler(event) {
         /* END LOOP: for each active tag link */
     }
     /* find all tag links with "href" attribute equal to the "href" constant */
-    const tagLinks = document.querySelectorAll('a.active[href^="tag-"]');
+    const tagLinks = document.querySelectorAll('a.active[href^="#tag-"]');
     /* START LOOP: for each found tag link */
     for (let tagLink of tagLinks) {
         /* add class active */
@@ -216,7 +229,29 @@ function addClickListenersToTags() {
 
 addClickListenersToTags();
 
-generateAuthors();
+function calculateAuthorsParams(authors) {
+    const params = {
+        min: 1;
+        max: 5,
+    }
+    console.log(params);
+
+    for (let author in authors) {
+        params.max = Math.max(authors[author], params.max);
+        params.min = Math.min(authors[author], params.min);
+    }
+    return params;
+}
+
+/* class */
+
+function calculateAuthorClass(count, params) {
+    const normalizedCount = count - params.min;
+    const normalizedMAx = params.max - params.min;
+    const percentage = normalizedCount / normalizedMax;
+    const classNumber = Math.floor(percentage * (optAuthorClassCount - 1) + 1);
+    return optAuthorClassPrefix + classNumber;
+}
 
 function generateAuthors() {
     /*find all articles */

@@ -1,3 +1,6 @@
+const templates = {
+    articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+};
 'use strict';
 
 const titleClickHandler = function(event) {
@@ -68,7 +71,12 @@ function generateTitleLinks(customSelector = '') {
         /* [DONE] get the title from the title element */
 
         /* [DONE] create HTML of the link */
-        const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+        /*const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';*/
+        const linkHTMLData = {
+            id: articleId,
+            title: articleTitle
+        };
+        const linkHTML = templates.articleLink(linkHTMLData);
 
         html = html + linkHTML;
     }

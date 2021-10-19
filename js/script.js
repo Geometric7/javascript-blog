@@ -308,7 +308,7 @@ function generateAuthors() {
 
 generateAuthors();
 
-const authorClickHandler = function (event) {
+const authorClickHandler = function(event) {
 
     event.preventDefault();
     const clickedElement = this;
@@ -332,7 +332,7 @@ const authorClickHandler = function (event) {
     generateTitleLinks('[data-author="' + author + '"]');
 };
 
-const addClickListenersToAuthors = function () {
+const addClickListenersToAuthors = function() {
     console.log(addClickListenersToAuthors);
 
     const authorLinks = document.querySelectorAll('a[href^="#author-"]');

@@ -175,9 +175,9 @@ function generateTags() {
             if (!allTags[tag]) {
                 /* [NEW] add tag to allTags object */
                 allTags[tag] = 1;
-            } else {
+            } else
                 allTags[tag]++;
-            }
+
         }
         /* END LOOP: for each tag */
 
@@ -235,6 +235,7 @@ function generateTags() {
 
 
 generateTags();
+
 
 
 

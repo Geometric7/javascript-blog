@@ -88,10 +88,8 @@ function calculateTagsParams(tags) {
             min,
             max
         };
-    console.log(calculateTagsParams);
 
     for (let tag in tags) {
-        console.log(tag + ' is used ' + tags[tag] + ' times');
         tagsParams.max = Math.max(tags[tag], tagsParams.max);
         tagsParams.min = Math.min(tags[tag], tagsParams.min);
     }
@@ -162,7 +160,7 @@ function generateTags() {
             /* generate HTML of the link */
 
             const linkHTMLData = {
-                id: articleTags,
+                id: tag,
                 title: tag
             };
             const linkHTML = templates.articleLink(linkHTMLData);
@@ -212,7 +210,7 @@ function generateTags() {
 
         /* [NEW] generate code of a link and add it to allTagsHTML */
 
-        const tagLinkHTML = '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '">' + tag + ' ' + '</a></li>';
+        //const tagLinkHTML = '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '">' + tag + ' ' + '</a></li>';
         //const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams);
         //console.log('tagLinkHTML:', tagLinkHTML);
 
@@ -238,6 +236,8 @@ function generateTags() {
 
 generateTags();
 
+
+
 /*add action after clicking tag*/
 function tagClickHandler(event) {
 
@@ -245,16 +245,16 @@ function tagClickHandler(event) {
     event.preventDefault();
 
     /* make new constant named "clickedElement" and give it the value of "this" */
-    const clickedElement = this,
+    const clickedElement = this;
 
-        /* make a new constant "href" and read the attribute "href" of the clicked element */
-        href = clickedElement.getAttribute('href'),
+    /* make a new constant "href" and read the attribute "href" of the clicked element */
+    const href = clickedElement.getAttribute('href');
 
-        /* make a new constant "tag" and extract tag from the "href" constant */
-        tag = href.replace('#tag-', ''),
+    /* make a new constant "tag" and extract tag from the "href" constant */
+    const tag = href.replace('#tag-', '');
 
-        /* find all tag links with class active */
-        activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
+    /* find all tag links with class active */
+    const activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
 
     /* START LOOP: for each active tag link */
     for (let activeTag of activeTags) {

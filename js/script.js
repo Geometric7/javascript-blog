@@ -152,6 +152,11 @@ function generateTags() {
         /* split tags into array */
 
         const articleTagsArray = articleTags.split(' ');
+//const articleTags = "tutorials code design tech"
+//"tutorials code design tech".split(' ')
+//articleTagsArray = ['tutorials','code','design','tech']
+
+
 
         /* START LOOP: for each tag */
 
@@ -160,10 +165,9 @@ function generateTags() {
             /* generate HTML of the link */
 
             const linkHTMLData = {
-                id: tag,
-                title: tag
+                tag: tag,
             };
-            const linkHTML = templates.articleLink(linkHTMLData);
+            const linkHTML = templates.articleTag(linkHTMLData);
 
             console.log(linkHTML);
 

@@ -1,140 +1,172 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext');
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
 /* Variables */
 /* Global */
- *, *::before, *::after {
-	 box-sizing: border-box;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
- body {
-	 background: #fff;
-	 font-family: 'Source Sans Pro', sans-serif;
-	 color: #444;
-	 font-weight: 300;
-	 font-size: 16px;
-	 line-height: 1.7;
+
+body {
+  background: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #444;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
 }
- .container {
-	 max-width: 1140px;
-	 margin: 0 auto;
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
 }
- .section-title {
-	 font-size: 22px;
-	 text-transform: uppercase;
-	 font-family: 'Oswald', sans-serif;
-	 font-weight: 600;
+
+.section-title {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
 }
- .section-title span {
-	 text-transform: none;
-	 font-weight: 400;
-	 color: #777;
+
+.section-title span {
+  text-transform: none;
+  font-weight: 400;
+  color: #777777;
 }
+
 /* Layout */
- .wrapper {
-	 display: flex;
-	 margin-left: 10px;
+.wrapper {
+  display: flex;
+  margin-left: 10px;
 }
- .sidebar {
-	 flex: 1 0 0;
+
+.sidebar {
+  flex: 1 0 0;
 }
- .posts {
-	 flex: 2 0 0;
+
+.posts {
+  flex: 2 0 0;
 }
- .sidebar, .posts {
-	 background: #fff;
-	 margin-right: 10px;
-	 padding: 40px;
-	 border: 1px solid #444;
-	 border-radius: 5px;
+
+.sidebar, .posts {
+  background: #fff;
+  margin-right: 10px;
+  padding: 40px;
+  border: 1px solid #444;
+  border-radius: 5px;
 }
+
 /* Logo */
- .logo {
-	 font-family: 'Sacramento', cursive;
-	 font-weight: 400;
-	 font-size: 104px;
-	 line-height: 1;
-	 text-align: center;
+.logo {
+  font-family: "Sacramento", cursive;
+  font-weight: 400;
+  font-size: 104px;
+  line-height: 1;
+  text-align: center;
 }
+
 /* Lists */
- .list {
-	 list-style-type: none;
-	 margin: 0;
-	 padding: 0;
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
- .list .active {
-	 font-weight: bold;
+
+.list .active {
+  font-weight: bold;
 }
- .list-horizontal li {
-	 display: inline-block;
+
+.list-horizontal li {
+  display: inline-block;
 }
+
 /* Authors */
- .authors li {
-	 margin-bottom: 12px;
-	 display: inline-block;
-	 margin: 0 5px;
+.authors li {
+  margin-bottom: 12px;
+  display: inline-block;
+  margin: 0 5px;
 }
- .author-size-1 {
-	 font-size: 10px;
-	 color: #15794c;
+
+.author-size-1 {
+  font-size: 10px;
+  color: #15794c;
 }
- .author-size-2 {
-	 font-size: 20px;
-	 color: purple;
+
+.author-size-2 {
+  font-size: 20px;
+  color: purple;
 }
- .author-size-3 {
-	 font-size: 30px;
-	 color: #2c31e4;
+
+.author-size-3 {
+  font-size: 30px;
+  color: #2c31e4;
 }
- .author-size-4 {
-	 font-size: 40px;
-	 color: orangered;
+
+.author-size-4 {
+  font-size: 40px;
+  color: orangered;
 }
- .author-size-5 {
-	 font-size: 50px;
-	 color: #c85a6e;
+
+.author-size-5 {
+  font-size: 50px;
+  color: #c85a6e;
 }
+
 /* Post */
- .post {
-	 display: none;
+.post {
+  display: none;
 }
- .post.active {
-	 display: block;
+
+.post.active {
+  display: block;
 }
- .post-author {
-	 font-style: italic;
+
+.post-author {
+  font-style: italic;
 }
- .post-tags {
-	 display: flex;
+
+.post-tags {
+  display: flex;
 }
- .post-tags p {
-	 margin: 0 10px 0 0;
+
+.post-tags p {
+  margin: 0 10px 0 0;
 }
+
 /* Cloud Tag */
- .tags li {
-	 display: inline-block;
-	 margin: 0 5px;
+.tags li {
+  display: inline-block;
+  margin: 0 5px;
 }
- .tag-size-1 {
-	 font-size: 10px;
-	 color: red;
+
+.tag-size-1 {
+  font-size: 10px;
+  color: red;
 }
- .tag-size-2 {
-	 font-size: 20px;
-	 color: #23bce2;
+
+.tag-size-2 {
+  font-size: 20px;
+  color: #23bce2;
 }
- .tag-size-3 {
-	 font-size: 30px;
-	 color: orange;
+
+.tag-size-3 {
+  font-size: 30px;
+  color: orange;
 }
- .tag-size-4 {
-	 font-size: 40px;
-	 color: purple;
+
+.tag-size-4 {
+  font-size: 40px;
+  color: purple;
 }
- .tag-size-5 {
-	 font-size: 50px;
-	 color: #7c31e4;
+
+.tag-size-5 {
+  font-size: 50px;
+  color: #7c31e4;
 }
- .list {
-	 list-style-type: none;
+
+.list {
+  list-style-type: none;
 }
- .list a {
-	 text-decoration: none;
+
+.list a {
+  text-decoration: none;
 }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxxSEFBWTtBQUVaLGNBQUE7QUFTQSxXQUFBO0FBRUE7RUFDRSxzQkFBc0I7QUNUeEI7O0FEWUE7RUFDRSxnQkFkZ0I7RUFlaEIsMENBVnVDO0VBV3ZDLFdBZmU7RUFnQmYsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixnQkFBZ0I7QUNUbEI7O0FEWUE7RUFDRSxpQkFBaUI7RUFDakIsY0FBYztBQ1RoQjs7QURZQTtFQUNFLGVBQWU7RUFDZix5QkFBeUI7RUFDekIsaUNBMUJnQztFQTJCaEMsZ0JBQWdCO0FDVGxCOztBREtBO0VBTUksb0JBQW9CO0VBQ3BCLGdCQUFnQjtFQUNoQixjQUFnQztBQ1BwQzs7QURXQSxXQUFBO0FBRUE7RUFDRSxhQUFhO0VBQ2IsaUJBQWlCO0FDVG5COztBRFlBO0VBQ0UsV0FBVztBQ1RiOztBRFlBO0VBQ0UsV0FBVztBQ1RiOztBRFlBO0VBQ0UsZ0JBdkRnQjtFQXdEaEIsa0JBQWtCO0VBQ2xCLGFBQWE7RUFDYixzQkF6RGU7RUEwRGYsa0JBQWtCO0FDVHBCOztBRFlBLFNBQUE7QUFFQTtFQUNFLGtDQTlEK0I7RUErRC9CLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsY0FBYztFQUNkLGtCQUFrQjtBQ1ZwQjs7QURhQSxVQUFBO0FBRUE7RUFDRSxxQkFBcUI7RUFDckIsU0FBUztFQUNULFVBQVU7QUNYWjs7QURRQTtFQUtJLGlCQUFpQjtBQ1RyQjs7QURhQTtFQUVJLHFCQUFxQjtBQ1h6Qjs7QURlQSxZQUFBO0FBRUE7RUFFSSxtQkFBbUI7RUFDbkIscUJBQXFCO0VBQ3RCLGFBQWE7QUNkaEI7O0FEaUJBO0VBQ0MsZUFBZTtFQUNmLGNBQXVCO0FDZHhCOztBRGdCQTtFQUNDLGVBQWU7RUFDZixhQUFhO0FDYmQ7O0FEZUE7RUFDQyxlQUFlO0VBQ2YsY0FBdUI7QUNaeEI7O0FEY0E7RUFDQyxlQUFlO0VBQ2YsZ0JBQWdCO0FDWGpCOztBRGFBO0VBQ0MsZUFBZTtFQUNmLGNBQXdCO0FDVnpCOztBRGFBLFNBQUE7QUFFQTtFQUNFLGFBQWE7QUNYZjs7QURVQTtFQUdJLGNBQWM7QUNUbEI7O0FEYUE7RUFDRSxrQkFBa0I7QUNWcEI7O0FEYUE7RUFDRSxhQUFhO0FDVmY7O0FEU0E7RUFHSSxrQkFBa0I7QUNSdEI7O0FEWUEsY0FBQTtBQUNBO0VBQ0UscUJBQXFCO0VBQ3JCLGFBQWE7QUNUZjs7QURXQTtFQUNFLGVBQWU7RUFDZixVQUFVO0FDUlo7O0FEVUE7RUFDRSxlQUFlO0VBQ2YsY0FBd0I7QUNQMUI7O0FEU0E7RUFDRSxlQUFlO0VBQ2YsYUFBYTtBQ05mOztBRFFBO0VBQ0UsZUFBZTtFQUNmLGFBQWE7QUNMZjs7QURPQTtFQUNFLGVBQWU7RUFDZixjQUF3QjtBQ0oxQjs7QURNQTtFQUNFLHFCQUFxQjtBQ0h2Qjs7QURFQTtFQUdNLHFCQUFxQjtBQ0QzQiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
